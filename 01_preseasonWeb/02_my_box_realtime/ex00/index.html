@@ -1,0 +1,29 @@
+<html>
+  <div
+    id="my_box_realtime"
+    style="
+      background-color: red;
+      position: absolute;
+      right: 70;
+      bottom: 70;
+      min-width: 100px;
+      min-height: 100px;
+    "
+  ></div>
+  <script type="text/javascript">
+    // YOUR CODE
+    let position = 70;
+    let myDiv = document.getElementById("my_box_realtime");
+    setInterval(function () {
+      if (position == 0) {
+        clearInterval(myDiv);
+      } else {
+        position -= 1;
+        myDiv.style.bottom = position + "px";
+        myDiv.style.right = position + "px";
+      }
+    }, 500);
+  </script>
+</html>
+
+
