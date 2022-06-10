@@ -1,0 +1,36 @@
+/* HEADER HERO FOOTER  */
+  .flex-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 25vh;
+    justify-content: center;
+  }
+
+/* CONTENT SIDEBAR */
+.flex-container-outer {
+    display: flex;
+    flex-direction: row;
+    height: 25vh;
+  }
+  
+  /* INSIDE CONTENT AND SIDEBAR */
+  .flex-container-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 50%;
+  }
+  
+
+/* changes for mobile view */
+@media (max-width: 800px) {
+    .flex-container-outer {
+      flex-direction: column;
+      height: 40vh;
+    }
+    
+    .flex-container {
+      height: 20vh;
+    } 
+  }
