@@ -1,0 +1,81 @@
+<html style='background-color: black'>
+  <div id="my_bouncing_box" 
+        style= "background-color: blue; 
+                border-radius: 3px; 
+                position: absolute; 
+                left: 0px; 
+                top: 0px; 
+                min-width: 100px; 
+                min-height: 100px; 
+                text-align: center; 
+                font-weight: bold; 
+                color: #999;" >mirsalik_i
+    </div>
+  <script type="text/javascript">
+    // YOUR CODE
+    var directions = ["br", "tr", "tl", "bl"];
+    var cur_direct = 0;
+    let position_x = 0;
+    let position_y = 0;
+    let myDiv = document.getElementById("my_bouncing_box");
+    function test() {
+        //reach the bottom from top left
+        if ((window.innerHeight - (position_y + 100)) === 0 && (directions[cur_direct] == "br")) {
+            cur_direct = 1;
+        }
+        //if reach the bottom from top right
+        else if ((window.innerHeight - (position_y + 100)) === 0 && (directions[cur_direct] == "bl")) {
+            cur_direct = 2;
+        }
+        //reach the right edge from bottom left
+        else if ((window.innerWidth - (position_x + 100)) === 0 && (directions[cur_direct] == "tr")) {
+            cur_direct = 2;
+        }
+        //reach the right edge from top left
+        else if ((window.innerWidth - (position_x + 100)) === 0 && (directions[cur_direct] == "br")) {
+            cur_direct = 3;
+        }
+        //reach the top from bottom left
+        else if (position_y === 0 && (directions[cur_direct] == "tr")) {
+            cur_direct = 0;
+        }
+        //reach the top from bottom right
+        else if (position_y === 0 && (directions[cur_direct] == "tl")) {
+            cur_direct = 3;
+        }
+        //reach the left edge from top right
+        else if (position_x === 0 && (directions[cur_direct] == "bl")) {
+            cur_direct = 0;
+        }
+        //reach the left edge from bottom rigth
+        else if (position_x === 0 && (directions[cur_direct] == "tl")) {
+            cur_direct = 1;
+        }
+        else {
+            switch (cur_direct) {
+                case 0:
+                    position_x += 1;
+                    position_y += 1;
+                    break;
+                case 1:
+                    position_x += 1;
+                    position_y -= 1;
+                    break;
+                case 2:
+                    position_x -= 1;
+                    position_y -= 1;
+                    break;
+                case 3:
+                    position_x -= 1;
+                    position_y += 1;
+                    break;
+            }
+            myDiv.style.left = position_x + "px";
+            myDiv.style.top = position_y + "px";
+        }
+    }
+    
+    
+    setInterval(test, 1);
+  </script>
+</html>
