@@ -59,7 +59,7 @@ void init_my_tar_header(my_tar_header* tar_head_ptr, my_tar_params* tar_param_pt
     //set size
     init_str(tar_head_ptr, buf->st_size, tar_head_ptr->size, sizeof(tar_head_ptr->size)/ sizeof(char));
     //set mtime
-    init_str(tar_head_ptr, buf->st_mtimespec.tv_sec, tar_head_ptr->mtime, sizeof(tar_head_ptr->mtime)/ sizeof(char));
+    init_str(tar_head_ptr, buf->st_mtim.tv_sec, tar_head_ptr->mtime, sizeof(tar_head_ptr->mtime)/ sizeof(char));
     
     //set typeflag
     set_typeflag(tar_head_ptr, buf->st_mode); //TODO
