@@ -1,3 +1,9 @@
+#ifdef __APPLE__
+#ifndef st_mtim
+#define st_mtim st_mtimespec
+#endif
+#endif
+
 #ifndef MY_TAR_HEADER_H
 #include "my_tar_params.h"
 #include <stdbool.h>
