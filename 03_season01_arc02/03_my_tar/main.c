@@ -16,18 +16,18 @@
  *  
  */
 
-bool isOnBit(int num, int pos) {
-	int mask = 1;
-	mask = mask << pos;
-	return num & mask;
-}
+// bool isOnBit(int num, int pos) {
+// 	int mask = 1;
+// 	mask = mask << pos;
+// 	return num & mask;
+// }
 
-void displayBits(int num) {
-	for (int i = sizeof(num) * 8 - 1; i >= 0; i--) {
-		my_putchar(isOnBit(num, i) ? '1' : '0');
-	}
-	putchar('\n');
-}
+// void displayBits(int num) {
+// 	for (int i = sizeof(num) * 8 - 1; i >= 0; i--) {
+// 		my_putchar(isOnBit(num, i) ? '1' : '0');
+// 	}
+// 	putchar('\n');
+// }
 
 
 
