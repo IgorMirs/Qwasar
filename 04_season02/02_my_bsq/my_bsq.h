@@ -5,24 +5,27 @@
 #include "my_readline.h"
 #include "my_point.h"
 
-typedef struct Bsq {
-    char** data;
-    size_t size;
+struct board_map {
+    char** data;    //2D array of chars representing the map
+    size_t size;    //the size of the map 
 
-    void (* print)(struct Bsq* bsq);
-    void (* delete)(struct Bsq* bsq);
-    void (* set_bsq)(struct Bsq* bsq);
-} Bsq;
+    //pointers to functions
+    void (* print)(struct board_map* map);
+    void (* delete)(struct board_map* map);
+    void (* set_bsq)(struct board_map* map);
+};
 
+//additional class for implementing constructor for board_map
+struct board_map_class {
+    struct board_map* (*new)(char* file_name);
+};
 
-Bsq* create_bsq(char* file_name);
-static void print_bsq(Bsq* arr); 
-static void set_bsq(Bsq* arr); 
-static void delete_bsq(Bsq* arr);
-static void set_ones (Bsq* const tbl);
-static Point set_numbers(Bsq* tbl);
-static void set_dots(Bsq* tbl);
-static int min(int, int, int);
-static void set_x(Bsq* tbl, Point p);
+/*
+The EXTERN keyword extends the visibility of the C variables and C functions.
+Used when a particular files need to access a variable from another file.
+Creating a constant board_map_class variable Map.
+*/
+extern const struct board_map_class Map;
+
 
 #endif
