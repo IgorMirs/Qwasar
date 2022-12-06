@@ -33,7 +33,7 @@ make
 perl genarate_map.pl x y density
 ```
 ## Usage
-
+```
 ./my_bsq map_file
 ```
 
