@@ -180,6 +180,7 @@ static void delete_bsq(struct board_map* map) {
     for(size_t i = 0; i < map->size; i++) {
         free(map->data[i]);
     }
+    free(map->data);
     free(map);
 }
 
