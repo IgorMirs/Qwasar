@@ -8,19 +8,21 @@ The board is represented by a file passed as the program’s argument.
 
 Example.
 Input:
+```
 .....
 .o..o
 .....
 .o...
 o...o
-
+```
 Output:
+```
 .....
 .oxxo
 ..xx.
 .o...
 o...o
-
+```
 ## Description
 Used dynamic programming technic to find out the maximum size square sub-matrix.
 
